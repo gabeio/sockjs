@@ -13,8 +13,8 @@ build:
 deploy:
     steps:
         - script:
-            name: gem install af
-            code: gem install af
+            name: gem install
+            code: gem install af --local
         - script:
             name: af login
             code: af login --email af_e --passwd af_pd
