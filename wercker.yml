@@ -14,7 +14,7 @@ deploy:
     steps:
         - script:
             name: gem install
-            code: gem install af --local
+            code: gem install af --i .
         - script:
             name: af login
             code: af login --email af_e --passwd af_pd
