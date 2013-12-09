@@ -4,9 +4,9 @@ build:
         - script:
             name: npm requirements
             code: npm i coffee-script
-        - script:
-            name: running server
-            code: node app.js
+#        - script:
+#            name: running server
+#            code: node app.js
         - script:
             name: curling server
             code: echo curl localhost:1337
