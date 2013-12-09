@@ -4,17 +4,18 @@ build:
         - script:
             name: npm requirements
             code: npm i coffee-script
-#        - script:
-#            name: running server
-#            code: node app.js
         - script:
-            name: curling server
-            code: echo curl localhost:1337
+            name: testing server
+            code: |
+                node app.js
+                curl localhost:1337
 deploy:
     steps:
         - script:
-            name: gem install
-            code: gem install af --i .
+            name: bundle install
+            code: |
+                cd af
+                bundle install
         - script:
             name: af login
             code: af login --email af_e --passwd af_pd
