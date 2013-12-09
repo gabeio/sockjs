@@ -12,10 +12,9 @@ build:
 deploy:
     steps:
         - script:
-            name: bundle install
-            code: |
-                cd af
-                bundle install
+            name: cd af
+            code: cd af
+        - bundle-install
         - script:
             name: af login
             code: af login --email af_e --passwd af_pd
