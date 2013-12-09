@@ -1,0 +1,23 @@
+box: wercker/nodejs
+build:
+    steps:
+        - script:
+            name: npm requirements
+            code: npm i coffee-script
+        - script:
+            name: running server
+            code: node app.js
+        - script:
+            name: curling server
+            code: echo curl localhost:1337
+deploy:
+    steps:
+        - script:
+            name: gem install af
+            code: gem install af
+        - script:
+            name: af login
+            code: af login --email af_e --passwd af_pd
+        - script:
+            name: af update
+            code: af update "-sockjs-"
